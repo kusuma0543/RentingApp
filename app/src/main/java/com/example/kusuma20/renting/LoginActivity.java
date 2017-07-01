@@ -127,14 +127,18 @@ public class LoginActivity extends AppCompatActivity {
                         JSONObject users = jObj.getJSONObject("user_det");
                         String uname1 = users.getString("umobilenumber");
                         String uname2 = users.getString("upassword");
-String uname3=users.getString("uid");
+                        String uname3=users.getString("uid");
+                        String uname4=users.getString("uname");
                         Intent intent=new Intent(LoginActivity.this,Categories.class);
                         intent.putExtra("ghtw",uname1);
                         intent.putExtra("ghtdw",uname2);
+;
+
                         SharedPreferences pref = PreferenceManager
                                 .getDefaultSharedPreferences(LoginActivity.this);
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString ("uid", uname3);
+                        editor.putString ("uname", uname4);
                         editor.commit();
 
 

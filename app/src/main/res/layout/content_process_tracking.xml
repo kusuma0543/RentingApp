@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.kusuma20.renting.ProcessTracking"
+    tools:showIn="@layout/activity_process_tracking">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#8fbcdea0"
+        android:layout_margin="10dp"
+        android:weightSum="3">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/ic_build_black_24dp"
+            />
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="#39761e"
+                android:textStyle="bold"
+                android:text="GENERAL SERVICE"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="#39761e"
+                android:textStyle="bold"
+                android:text="CD_44-666-77"/>
+            </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:gravity="end"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#39761e"
+            android:textStyle="bold"
+            android:text="opened"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="#8fbcdea0"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:weightSum="5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:src="@drawable/firstb"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+android:layout_weight="1"
+            android:src="@drawable/firstd"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+android:layout_weight="1"
+            android:src="@drawable/firstc"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/firste"/>
+
+    </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="YOUR BOOKING IS PENDING"
+            android:textColor="#2b5c15"
+            android:textStyle="bold"
+android:layout_marginLeft="69dp"
+            android:textSize="17sp"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:textColor="#2b5c15"
+            android:text="1-8-2017"/>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

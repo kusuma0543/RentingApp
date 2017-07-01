@@ -45,6 +45,10 @@
         <activity
             android:name=".RentalBooking"
             android:label="@string/title_activity_rental_booking"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProcessTracking"
+            android:label="@string/title_activity_process_tracking"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

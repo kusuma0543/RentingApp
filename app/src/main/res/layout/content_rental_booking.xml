@@ -85,5 +85,9 @@ android:hint="Pick Your Time"
         android:layout_height="64dp"
         android:layout_gravity="center"
         app:text="            Swipe To Book" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idi"/>
 
 </LinearLayout>

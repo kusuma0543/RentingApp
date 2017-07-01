@@ -38,9 +38,9 @@ EditText date_pic,time_pic,description;
     String sdate_pic,stime_pic,sdescription;
     Button bdate_pic,btime_pic;
     SlideToActView sta;
-    TextView hjhj;
+TextView idid;
     int mYear,mMonth,mDay;
-    TimePicker simpleTimePicker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ EditText date_pic,time_pic,description;
         description=(EditText) findViewById(R.id.description);
         bdate_pic = (Button) findViewById(R.id.bdatepic);
 btime_pic=(Button) findViewById(R.id.btimepic);
-
+idid=(TextView) findViewById(R.id.idi);
         btime_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,10 +90,10 @@ btime_pic=(Button) findViewById(R.id.btimepic);
 
             }
         });
-        hjhj=(TextView) findViewById(R.id.hjhj);
+
         Intent intent = getIntent();
         final String vsid = intent.getStringExtra("sid");
-        hjhj.setText(vsid);
+
         bdate_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,7 +111,10 @@ btime_pic=(Button) findViewById(R.id.btimepic);
                 final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(RentalBooking.this);
                 SharedPreferences.Editor editor = pref.edit();
                  String unid= pref.getString("uid", "8");
-                insertme(unid,vsid,sdate_pic, stime_pic, sdescription);
+                String uname= pref.getString("uname", "8");
+idid.setText(uname);
+
+                insertme(unid,vsid,uname,sdate_pic, stime_pic, sdescription);
                 Intent mainIntent = new Intent(RentalBooking.this, RentalBooking.class);
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -121,7 +124,7 @@ btime_pic=(Button) findViewById(R.id.btimepic);
             }
         });
     }
-    public void insertme(final String s1, final String s2,final String s3,final String s4,final String s5) {
+    public void insertme(final String s1, final String s2,final String s3,final String s4,final String s5,final String s6) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, GlobalUrl.Urloh, new Response.Listener<String>() {
             public void onResponse(String response) {
             }
@@ -135,9 +138,10 @@ btime_pic=(Button) findViewById(R.id.btimepic);
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("uid", s2);
                 params.put("sid", s1);
-                params.put("dateo", s3);
-                params.put("timeo", s4);
-                params.put("desco",s5);
+                params.put("bname", s3);
+                params.put("dateo", s4);
+                params.put("timeo", s5);
+                params.put("desco",s6);
 
                 return params;
             }
