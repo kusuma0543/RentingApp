@@ -66,8 +66,7 @@ TextView tcode,tname,ttype,tpickup,treturnm,tcostdiscount;
         String code = intent.getStringExtra("code");
         String costdisc=intent.getStringExtra("costdiscount");
         String imgu = intent.getStringExtra("imgurl");
-        final String sid=intent.getStringExtra("sid");
-        final String uid=intent.getStringExtra("uid");
+         final String sidk=intent.getStringExtra("sid");
 
         tcode.setText(code);
         tname.setText(name);
@@ -82,8 +81,8 @@ TextView tcode,tname,ttype,tpickup,treturnm,tcostdiscount;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Third.this,RentalBooking.class);
-                intent.putExtra("sid",sid);
-                intent.putExtra("uid",uid);
+                intent.putExtra("sid",sidk);
+
                 startActivity(intent);
 
             }

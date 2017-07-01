@@ -65,8 +65,7 @@ public class Categories extends AppCompatActivity
         dialog.setCancelable(false);
         dialog.setMessage("Loading. Please wait...");
 
-        Intent intent = getIntent();
-         sid= intent.getStringExtra("uid");
+
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -193,7 +192,7 @@ public class Categories extends AppCompatActivity
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Categorieslist categorieslist = movieModelList.get(position);
                         Intent intent = new Intent(Categories.this, Second.class);
-intent.putExtra("uid",sid);
+
                         intent.putExtra("name",categorieslist.getCname());
 
                         intent.putExtra("id",Integer.toString( categorieslist.getId()));

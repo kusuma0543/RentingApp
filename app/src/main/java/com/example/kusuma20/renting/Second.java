@@ -69,9 +69,6 @@ public class Second extends AppCompatActivity {
         dialog.setCancelable(false);
         dialog.setMessage("Loading. Please wait...");
 
-        Intent intenti = getIntent();
-        sid= intenti.getStringExtra("uid");
-
 
         listviewk=(ListView) findViewById(R.id.listviewk);
         Intent intent = getIntent();
@@ -212,7 +209,7 @@ public class Second extends AppCompatActivity {
                         intent.putExtra("costdiscount",item.getSactualcost());
                         intent.putExtra("id",item.getCid());
                         intent.putExtra("sid",item.getSid());
-                        intent.putExtra("uid",sid);
+
 
 
                         startActivity(intent);

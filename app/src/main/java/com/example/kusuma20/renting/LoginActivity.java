@@ -3,11 +3,13 @@ package com.example.kusuma20.renting;
 import android.app.ActivityOptions;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -125,11 +127,15 @@ public class LoginActivity extends AppCompatActivity {
                         JSONObject users = jObj.getJSONObject("user_det");
                         String uname1 = users.getString("umobilenumber");
                         String uname2 = users.getString("upassword");
-                      String uname3=users.getString("uid");
+String uname3=users.getString("uid");
                         Intent intent=new Intent(LoginActivity.this,Categories.class);
                         intent.putExtra("ghtw",uname1);
                         intent.putExtra("ghtdw",uname2);
-                        intent.putExtra("ghtdwf",uname3);
+                        SharedPreferences pref = PreferenceManager
+                                .getDefaultSharedPreferences(LoginActivity.this);
+                        SharedPreferences.Editor editor = pref.edit();
+                        editor.putString ("uid", uname3);
+                        editor.commit();
 
 
                         startActivity(intent);

@@ -84,5 +84,6 @@ android:hint="Pick Your Time"
         android:layout_marginBottom="10dp"
         android:layout_height="64dp"
         android:layout_gravity="center"
-        app:text="            Book Your Category" />
+        app:text="            Swipe To Book" />
+
 </LinearLayout>
