@@ -23,4 +23,7 @@
     <string name="register">REGISTER</string>
     <string name="title_activity_rental_booking">RentalBooking</string>
     <string name="title_activity_process_tracking">ProcessTracking</string>
+    <string name="title_activity_my_account">MyAccount</string>
+    <string name="title_activity_my_account_edit">MyAccountEdit</string>
+    <string name="title_activity_nothing">Nothing</string>
 </resources>

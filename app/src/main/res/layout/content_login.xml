@@ -119,7 +119,10 @@
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="#000"
+                android:id="@+id/forgotedit"
                 android:textSize="12sp"
+                android:onClick="onClick"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_your_password"

@@ -34,4 +34,6 @@
 
     </style>
 
+    <string name="hotline_file_provider_authority">com.example.demoapp.provider</string>
+
 </resources>

@@ -25,30 +25,72 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Signupactivity"
             android:label="@string/title_activity_signupactivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Categories"
             android:label="@string/title_activity_categories"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Second"
             android:label="@string/title_activity_second"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Third"
             android:label="@string/title_activity_third"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RentalBooking"
             android:label="@string/title_activity_rental_booking"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ProcessTracking"
             android:label="@string/title_activity_process_tracking"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyAccount"
+            android:label="@string/title_activity_my_account"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".FireBaseJavaClass"
+            android:enabled="true"
+            android:exported="true" />
+        <service android:name=".FireBaseServiceClass">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".MyAccountEdit"
+            android:label="@string/title_activity_my_account_edit"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.demoapp.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/hotline_file_provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".Nothing"
+            android:label="@string/title_activity_nothing"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

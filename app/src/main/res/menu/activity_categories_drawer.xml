@@ -5,10 +5,35 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/icfilter"
-            android:title="My Rental List" />
-
+            android:title="My Rental List"
+            />
+        <item
+            android:id="@+id/nav_accounts"
+            android:icon="@drawable/ic_account"
+            android:title="My Account"
+            />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/ic_feedback"
+            android:title="Feedback"
+            />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout"
+            />
     </group>
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single"
+      >
 
-
-
+        <item
+            android:id="@+id/drawer_item_settings"
+            android:icon="@drawable/ic_help"
+            android:title="Need Help?" >
+        </item>
+    </group>
 </menu>
+
+

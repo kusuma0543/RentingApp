@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -32,6 +33,7 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -66,7 +68,9 @@ public class LoginActivity extends AppCompatActivity {
     CardView cv;
     @InjectView(R.id.fab)
     FloatingActionButton fab;
+    TextView forgoth;
     String sphone,spassword;
+    String uname5,uname2;
     public static final int CONNECTION_TIMEOUT=10000;
     public static final int READ_TIMEOUT=15000;
     @Override
@@ -74,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
+        forgoth=(TextView) findViewById(R.id.forgotedit);
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -113,6 +119,24 @@ public class LoginActivity extends AppCompatActivity {
 
                     logininto(sphone,spassword);
                 }
+            case R.id.forgotedit:
+
+                       forgoth.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View view) {
+                               Intent i = new Intent(Intent.ACTION_SEND);
+                               i.setType("text/plain");
+                               i.putExtra(Intent.EXTRA_EMAIL , new String[]{uname5});
+                               i.putExtra(Intent.EXTRA_SUBJECT, "Password of your rental app");
+                               i.putExtra(Intent.EXTRA_TEXT , uname2);
+                               try {
+                                   startActivity(Intent.createChooser(i, "Send mail..."));
+                               } catch (android.content.ActivityNotFoundException ex) {
+                                   Toast.makeText(LoginActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                               }
+                           }
+                       });
+
         }
     }
     public void logininto(final String sphone1,final String sphone2) {
@@ -126,13 +150,16 @@ public class LoginActivity extends AppCompatActivity {
                     {
                         JSONObject users = jObj.getJSONObject("user_det");
                         String uname1 = users.getString("umobilenumber");
-                        String uname2 = users.getString("upassword");
+                        uname2 = users.getString("upassword");
                         String uname3=users.getString("uid");
                         String uname4=users.getString("uname");
+                        uname5=users.getString("uemail");
                         Intent intent=new Intent(LoginActivity.this,Categories.class);
                         intent.putExtra("ghtw",uname1);
                         intent.putExtra("ghtdw",uname2);
-;
+
+                        intent.putExtra("jijii",uname4);
+                        intent.putExtra("gkkk",uname5);
 
                         SharedPreferences pref = PreferenceManager
                                 .getDefaultSharedPreferences(LoginActivity.this);

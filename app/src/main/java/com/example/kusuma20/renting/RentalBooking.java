@@ -100,27 +100,34 @@ idid=(TextView) findViewById(R.id.idi);
                 datepickerkk();
             }
         });
-
         sta.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
             @Override
             public void onSlideComplete(@NotNull SlideToActView view) {
+
                 sdate_pic = date_pic.getText().toString();
                 stime_pic = time_pic.getText().toString();
                 sdescription = description.getText().toString();
+                if(sdate_pic.equals("") || stime_pic.equals("") ||sdescription.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"please enter all details",Toast.LENGTH_LONG).show();
+                }
+                else {
 
-                final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(RentalBooking.this);
-                SharedPreferences.Editor editor = pref.edit();
-                 String unid= pref.getString("uid", "8");
-                String uname= pref.getString("uname", "8");
-idid.setText(uname);
 
-                insertme(unid,vsid,uname,sdate_pic, stime_pic, sdescription);
-                Intent mainIntent = new Intent(RentalBooking.this, RentalBooking.class);
-                mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                mainIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(mainIntent);
-                sta.resetSlider();
+                    final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(RentalBooking.this);
+                    SharedPreferences.Editor editor = pref.edit();
+                    String unid = pref.getString("uid", "8");
+                    String uname = pref.getString("uname", "8");
+                    idid.setText(uname);
+
+                    insertme(unid, vsid, uname, sdate_pic, stime_pic, sdescription);
+                    Intent mainIntent = new Intent(RentalBooking.this, RentalBooking.class);
+                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(mainIntent);
+                    sta.resetSlider();
+                }
             }
         });
     }

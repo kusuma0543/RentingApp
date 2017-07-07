@@ -37,6 +37,14 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.ncorti:slidetoact:0.1.0'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.github.freshdesk:hotline-android:1.2.+'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
+    compile 'com.github.jetradarmobile.desertplaceholder:desertplaceholder:1.2.2'
 }
+
+
+
+
+apply plugin: 'com.google.gms.google-services'

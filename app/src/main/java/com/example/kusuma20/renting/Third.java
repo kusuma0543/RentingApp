@@ -17,7 +17,6 @@ import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
-import static com.example.kusuma20.renting.R.id.imageView;
 
 public class Third extends AppCompatActivity {
 TextView tcode,tname,ttype,tpickup,treturnm,tcostdiscount;
