@@ -165,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
                                 .getDefaultSharedPreferences(LoginActivity.this);
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString ("uid", uname3);
-                        editor.putString ("uname", uname4);
+                        editor.putString ("uname", uname5);
                         editor.commit();
 
 

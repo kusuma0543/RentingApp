@@ -11,7 +11,7 @@
         android:id="@+id/gridview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+android:scrollbars="none"
 android:layout_margin="20dp"
         android:numColumns="2"
         android:horizontalSpacing="15dp"

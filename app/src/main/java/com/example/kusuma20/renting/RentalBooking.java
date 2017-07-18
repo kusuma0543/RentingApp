@@ -37,7 +37,7 @@ public class RentalBooking extends AppCompatActivity {
 EditText date_pic,time_pic,description;
     String sdate_pic,stime_pic,sdescription;
     Button bdate_pic,btime_pic;
-    SlideToActView sta;
+    Button sta;
 TextView idid;
     int mYear,mMonth,mDay;
 
@@ -65,13 +65,13 @@ TextView idid;
                 onBackPressed();
             }
         });
-        sta = (SlideToActView) findViewById(R.id.renterbook);
+        sta = (Button) findViewById(R.id.renterbook);
         date_pic = (EditText) findViewById(R.id.datepic);
         time_pic = (EditText) findViewById(R.id.timepic);
         description=(EditText) findViewById(R.id.description);
         bdate_pic = (Button) findViewById(R.id.bdatepic);
-btime_pic=(Button) findViewById(R.id.btimepic);
-idid=(TextView) findViewById(R.id.idi);
+        btime_pic=(Button) findViewById(R.id.btimepic);
+        idid=(TextView) findViewById(R.id.idi);
         btime_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,36 +100,37 @@ idid=(TextView) findViewById(R.id.idi);
                 datepickerkk();
             }
         });
-        sta.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
-            @Override
-            public void onSlideComplete(@NotNull SlideToActView view) {
-
-                sdate_pic = date_pic.getText().toString();
-                stime_pic = time_pic.getText().toString();
-                sdescription = description.getText().toString();
-                if(sdate_pic.equals("") || stime_pic.equals("") ||sdescription.equals(""))
-                {
-                    Toast.makeText(getApplicationContext(),"please enter all details",Toast.LENGTH_LONG).show();
-                }
-                else {
+        sta.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
 
 
-                    final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(RentalBooking.this);
-                    SharedPreferences.Editor editor = pref.edit();
-                    String unid = pref.getString("uid", "8");
-                    String uname = pref.getString("uname", "8");
-                    idid.setText(uname);
+             sdate_pic = date_pic.getText().toString();
+             stime_pic = time_pic.getText().toString();
+             sdescription = description.getText().toString();
+             if(sdate_pic.equals("") || stime_pic.equals("") ||sdescription.equals(""))
+             {
+                 Toast.makeText(getApplicationContext(),"please enter all details",Toast.LENGTH_LONG).show();
+             }
+             else {
 
-                    insertme(unid, vsid, uname, sdate_pic, stime_pic, sdescription);
-                    Intent mainIntent = new Intent(RentalBooking.this, RentalBooking.class);
-                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(mainIntent);
-                    sta.resetSlider();
-                }
-            }
-        });
+
+                 final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(RentalBooking.this);
+                 SharedPreferences.Editor editor = pref.edit();
+                 String unid = pref.getString("uid", "8");
+                 String uname = pref.getString("uname", "8");
+
+
+                 insertme(unid, vsid, uname, sdate_pic, stime_pic, sdescription);
+                 Intent mainIntent = new Intent(RentalBooking.this, RentalBooking.class);
+
+                 startActivity(mainIntent);
+
+             }
+         }
+     });
+
+
     }
     public void insertme(final String s1, final String s2,final String s3,final String s4,final String s5,final String s6) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, GlobalUrl.Urloh, new Response.Listener<String>() {
@@ -166,10 +167,12 @@ idid=(TextView) findViewById(R.id.idi);
         mYear=c.get(Calendar.YEAR);
         mMonth=c.get(Calendar.MONTH);
         mDay=c.get(Calendar.DAY_OF_MONTH);
-        DatePickerDialog datePickerDialog=new DatePickerDialog(RentalBooking.this, new DatePickerDialog.OnDateSetListener() {
+        final DatePickerDialog datePickerDialog=new DatePickerDialog(RentalBooking.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                view.setMinDate(System.currentTimeMillis() - 1000);
                 date_pic.setText(dayOfMonth+"/"+month+"/"+year);
+
             }
         },mDay,mMonth,mYear);
         datePickerDialog.show();

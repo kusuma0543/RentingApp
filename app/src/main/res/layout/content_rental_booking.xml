@@ -24,7 +24,7 @@ android:hint="Pick Your Date"
             android:layout_weight="1.5"
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:background="@drawable/ic_date_range_black_24dp"
@@ -47,7 +47,7 @@ android:hint="Pick Your Time"
             android:layout_weight="1.5"
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
@@ -63,28 +63,28 @@ android:hint="Pick Your Time"
     android:maxLines="4"
     android:hint="Enter Description"
     android:id="@+id/description"/>
-    <!--<Button-->
-        <!--android:layout_width="290dp"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/renterbook"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:gravity="center"-->
-        <!--android:textColor="#ffff"-->
-        <!--android:textStyle="bold"-->
-        <!--android:text="Book Your Product"-->
-        <!--android:background="@drawable/rounds"/>-->
-
-    <com.ncorti.slidetoact.SlideToActView
+    <Button
+        android:layout_width="290dp"
+        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content"
         android:id="@+id/renterbook"
-        android:layout_marginTop="30dp"
-        android:layout_width="270dp"
-        android:textAlignment="center"
-        app:text_size="19sp"
-        android:layout_marginBottom="10dp"
-        android:layout_height="64dp"
         android:layout_gravity="center"
-        app:text="            Swipe To Book" />
+        android:gravity="center"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:text="Book Your Product"
+        android:background="@drawable/rounds"/>
+
+    <!--<com.ncorti.slidetoact.SlideToActView-->
+        <!--android:id="@+id/renterbook"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:layout_width="270dp"-->
+        <!--android:textAlignment="center"-->
+        <!--app:text_size="19sp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_height="64dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--app:text="            Swipe To Book" />-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
